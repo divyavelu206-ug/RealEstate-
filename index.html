@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Listing Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fas fa-home"></i> RealEstate</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#favorites">Favorites</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Find Your Perfect Property</h1>
+            <p>Discover homes, plots, and commercial properties tailored to your needs across Tamil Nadu.</p>
+            
+            <div class="hero-search">
+                <select id="heroLocation">
+                    <option value="">Any Location</option>
+                    <option value="Coimbatore">Coimbatore</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Salem">Salem</option>
+                    <option value="Erode">Erode</option>
+                    <option value="Tiruchengode">Tiruchengode</option>
+                    <option value="Tiruppur">Tiruppur</option>
+                </select>
+                <select id="heroType">
+                    <option value="">Any Type</option>
+                    <option value="Apartment">Apartment</option>
+                    <option value="Villa">Villa</option>
+                    <option value="Independent House">Independent House</option>
+                    <option value="Residential Plot">Residential Plot</option>
+                    <option value="Commercial Property">Commercial Property</option>
+                </select>
+                <select id="heroMaxPrice">
+                    <option value="">Max Price</option>
+                    <option value="5000000">Up to ₹50 Lakhs</option>
+                    <option value="10000000">Up to ₹1 Crore</option>
+                    <option value="20000000">Up to ₹2 Crores</option>
+                    <option value="30000000">Up to ₹3 Crores</option>
+                    <option value="50000000">Up to ₹5 Crores</option>
+                </select>
+                <button id="heroSearchBtn" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Properties Section -->
+    <section id="properties" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Properties</h2>
+            
+            <!-- Filters -->
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="filterLocation">Location</label>
+                    <select id="filterLocation">
+                        <option value="">All Locations</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Salem">Salem</option>
+                        <option value="Erode">Erode</option>
+                        <option value="Tiruchengode">Tiruchengode</option>
+                        <option value="Tiruppur">Tiruppur</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterType">Property Type</label>
+                    <select id="filterType">
+                        <option value="">All Types</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Independent House">Independent House</option>
+                        <option value="Residential Plot">Residential Plot</option>
+                        <option value="Commercial Property">Commercial Property</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterMaxPrice">Max Price</label>
+                    <select id="filterMaxPrice">
+                        <option value="">Any Price</option>
+                        <option value="5000000">Up to ₹50 Lakhs</option>
+                        <option value="10000000">Up to ₹1 Crore</option>
+                        <option value="20000000">Up to ₹2 Crores</option>
+                        <option value="30000000">Up to ₹3 Crores</option>
+                        <option value="50000000">Up to ₹5 Crores</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterMinBeds">Min Bedrooms</label>
+                    <select id="filterMinBeds">
+                        <option value="">Any</option>
+                        <option value="1">1+</option>
+                        <option value="2">2+</option>
+                        <option value="3">3+</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="filter-actions">
+                    <button id="applyFiltersBtn" class="btn btn-primary">Apply</button>
+                    <button id="clearFiltersBtn" class="btn btn-secondary">Clear Filters</button>
+                </div>
+            </div>
+
+            <!-- Property Grid -->
+            <div id="propertyGrid" class="property-grid">
+                <!-- Properties will be injected here via JavaScript -->
+            </div>
+            <div id="noResults" class="no-results hidden">
+                <p>No properties match your search criteria.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Your Favorite Properties</h2>
+            <div id="favoritesGrid" class="property-grid">
+                <!-- Favorites will be injected here -->
+            </div>
+            <div id="noFavorites" class="no-results">
+                <p>You haven't saved any properties yet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Us</h2>
+                    <p>Welcome to Real Estate Listing Portal, your trusted partner in finding the perfect property. Whether you are looking for a dream home, a profitable commercial space, or a valuable plot of land, we are here to help you easily discover properties based on your requirements.</p>
+                    <p>Our platform offers a seamless experience without the hassle of registration. Browse through high-quality listings in major cities across Tamil Nadu and contact agents directly.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Salem, Tamil Nadu</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 9080180899</p>
+                    <p><i class="fas fa-envelope"></i> info@realestateportal.com</p>
+                </div>
+                <div class="contact-form-container">
+                    <form id="contactForm" class="form">
+                        <div class="form-group">
+                            <input type="text" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                        <div id="formSuccessMessage" class="success-message hidden">Thank you! Your message has been sent.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3><i class="fas fa-home"></i> RealEstate</h3>
+                    <p>Your one-stop destination for finding properties in Tamil Nadu.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Real Estate Listing Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Property Details Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content large">
+            <span class="close-modal">&times;</span>
+            <div id="modalDetails" class="modal-details">
+                <!-- Details injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Agent Modal -->
+    <div id="agentModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Agent</h2>
+            <p id="agentPropertyName" class="mb-4 text-muted"></p>
+            <form id="agentForm" class="form">
+                <div class="form-group">
+                    <input type="text" id="agentName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="agentEmail" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="agentPhone" placeholder="Your Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="agentMessage" rows="4" placeholder="I am interested in this property..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+                <div id="agentSuccessMessage" class="success-message hidden">Message sent successfully to the agent!</div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
