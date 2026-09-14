@@ -413,7 +413,7 @@ const properties = [
         "bedrooms": 2,
         "bathrooms": 2,
         "area": 1000,
-        "image": "https://images.unsplash.com/photo-1502672260266-1c1c29440404?w=600&q=80",
+        "image": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",
         "description": "A premium apartment located in the prime area of Erode. This property is strategically positioned with excellent connectivity to major parts of Erode, offering a great lifestyle and high investment returns.",
         "amenities": [
             "Gym",
@@ -422,7 +422,7 @@ const properties = [
             "Security"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1502672260266-1c1c29440404?w=600&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",
             "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80",
             "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=600&q=80"
         ],
@@ -467,7 +467,7 @@ const properties = [
         "bedrooms": 3,
         "bathrooms": 3,
         "area": 1400,
-        "image": "https://images.unsplash.com/photo-1605276374104-a628b0dc4fa5?w=600&q=80",
+        "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80",
         "description": "A premium independent house located in the prime area of Erode. This property is strategically positioned with excellent connectivity to major parts of Erode, offering a great lifestyle and high investment returns.",
         "amenities": [
             "Private Garden",
@@ -476,7 +476,7 @@ const properties = [
             "Terrace"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1605276374104-a628b0dc4fa5?w=600&q=80",
+            "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&q=80",
             "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80",
             "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=600&q=80"
         ],
@@ -629,7 +629,7 @@ const properties = [
         "bedrooms": 0,
         "bathrooms": 0,
         "area": 1200,
-        "image": "https://images.unsplash.com/photo-1590243402778-958a22bc5c37?w=600&q=80",
+        "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
         "description": "A premium residential plot located in the prime area of Tiruppur. This property is strategically positioned with excellent connectivity to major parts of Tiruppur, offering a great lifestyle and high investment returns.",
         "amenities": [
             "Gated Community",
@@ -638,7 +638,7 @@ const properties = [
             "Clear Title"
         ],
         "images": [
-            "https://images.unsplash.com/photo-1590243402778-958a22bc5c37?w=600&q=80",
+            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
             "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&q=80",
             "https://images.unsplash.com/photo-1505843513577-22bb7d21e455?w=600&q=80"
         ],
