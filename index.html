@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
@@ -71,7 +73,7 @@
             <h2 class="section-title">Featured Properties</h2>
             
             <!-- Filters -->
-            <div class="filters">
+            <div class="filters" id="search">
                 <div class="filter-group">
                     <label for="filterLocation">Location</label>
                     <select id="filterLocation">
@@ -116,6 +118,16 @@
                         <option value="4">4+</option>
                     </select>
                 </div>
+                <div class="filter-group">
+                    <label for="filterSort">Sort By</label>
+                    <select id="filterSort">
+                        <option value="newest">Newest</option>
+                        <option value="priceLowHigh">Price: Low to High</option>
+                        <option value="priceHighLow">Price: High to Low</option>
+                        <option value="areaSmallLarge">Area: Small to Large</option>
+                        <option value="areaLargeSmall">Area: Large to Small</option>
+                    </select>
+                </div>
                 <div class="filter-actions">
                     <button id="applyFiltersBtn" class="btn btn-primary">Apply</button>
                     <button id="clearFiltersBtn" class="btn btn-secondary">Clear Filters</button>
@@ -141,6 +153,19 @@
             </div>
             <div id="noFavorites" class="no-results">
                 <p>You haven't saved any properties yet.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recently Viewed Section -->
+    <section id="recentlyViewed" class="section">
+        <div class="container">
+            <h2 class="section-title">Recently Viewed</h2>
+            <div id="recentGrid" class="property-grid">
+                <!-- Recent will be injected here -->
+            </div>
+            <div id="noRecent" class="no-results">
+                <p>You haven't viewed any properties yet.</p>
             </div>
         </div>
     </section>
@@ -257,6 +282,35 @@
                 <div id="agentSuccessMessage" class="success-message hidden">Message sent successfully to the agent!</div>
             </form>
         </div>
+    </div>
+
+    <!-- Compare Floating Bar -->
+    <div id="compareBar" class="compare-bar hidden">
+        <div class="compare-bar-content">
+            <span id="compareCountText">0 properties selected to compare (Max 3)</span>
+            <div class="compare-bar-actions">
+                <button id="viewCompareBtn" class="btn btn-primary">Compare</button>
+                <button id="clearCompareBtn" class="btn btn-secondary">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div id="compareModal" class="modal">
+        <div class="modal-content large">
+            <span class="close-modal">&times;</span>
+            <h2>Compare Properties</h2>
+            <div class="compare-table-wrapper">
+                <table id="compareTable" class="compare-table">
+                    <!-- Injected via JS -->
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Toast Notification -->
+    <div id="successToast" class="toast hidden">
+        <i class="fas fa-check-circle"></i> <span id="toastMessage">Success!</span>
     </div>
 
     <script src="script.js"></script>
